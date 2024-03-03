@@ -6,6 +6,8 @@ import jwt_decode from "jwt-decode";
 import NotFound from "./NotFound.js";
 import Skeleton from "./Skeleton.js";
 import App2 from "./App2.js";
+import App3 from "./App3.js";
+    
 
 import "../utilities.css";
 
@@ -34,6 +36,7 @@ const App = () => {
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <App3/>
 
     </>
   );
