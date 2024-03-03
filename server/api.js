@@ -6,14 +6,11 @@
 | This file defines the routes for your server.
 |
 */
-
+const Danger = require("./models/Danger");
 const express = require("express");
 
 // import models so we can interact with the database
-const User = require("./models/user");
-
-// import authentication library
-const auth = require("./auth");
+// const User = require("./models/user");
 
 // api endpoints: all these paths will be prefixed with "/api/"
 const router = express.Router();
@@ -21,23 +18,30 @@ const router = express.Router();
 //initialize socket
 const socketManager = require("./server-socket");
 
-router.post("/login", auth.login);
-router.post("/logout", auth.logout);
-router.get("/whoami", (req, res) => {
-  if (!req.user) {
-    // not logged in
-    return res.send({});
-  }
+router.post("/danger", (req, res) => {
+  console.log(req.body)
 
-  res.send(req.user);
+  const newDanger = new Danger({
+    locationX: req.body.location.x,
+    locationY: req.body.location.y,
+    radius:req.body.radius,
+  });
+
+  newDanger.save().then((danger) => res.send(danger));
 });
 
-router.post("/initsocket", (req, res) => {
-  // do nothing if user not logged in
-  if (req.user)
-    socketManager.addUser(req.user, socketManager.getSocketFromSocketID(req.body.socketid));
-  res.send({});
+router.get("/dangerGets", (req, res) => {
+
+  Danger.find(function(err, apis) {
+
+      if (err) return console.error(err);
+
+      res.send(apis);
+
+  });
+
 });
+
 
 // |------------------------------|
 // | write your API methods below!|

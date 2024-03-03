@@ -1,0 +1,36 @@
+/* CSS styles for DangerForm component */
+
+.danger-form {
+    max-width: 300px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Add spacing between form groups */
+  }
+  
+  .label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px; /* Add spacing below labels */
+  }
+  
+  .input {
+    width: 100%; /* Make input fields take up full width */
+    padding: 8px; /* Add padding */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 4px; /* Add border radius */
+  }
+  
+  .button {
+    width: 100%; /* Make button take up full width */
+    padding: 10px; /* Add padding */
+    background-color: #007bff; /* Set background color */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Add border radius */
+    cursor: pointer; /* Add pointer cursor */
+  }
+  
+  .button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+  }

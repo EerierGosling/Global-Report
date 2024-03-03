@@ -27,9 +27,9 @@ const express = require("express"); // backend framework for our node server.
 const session = require("express-session"); // library that stores info about each connected user
 const mongoose = require("mongoose"); // library to connect to MongoDB
 const path = require("path"); // provide utilities for working with file and directory paths
+const cors = require('cors') // provides CORS functionality
 
 const api = require("./api");
-const auth = require("./auth");
 
 // socket stuff
 const socketManager = require("./server-socket");
@@ -38,7 +38,7 @@ const socketManager = require("./server-socket");
 // TODO change connection URL after setting up your team database
 const mongoConnectionURL = process.env.MONGO_SRV;
 // TODO change database name to the name you chose
-const databaseName = "FILL_ME_IN";
+const databaseName = "Blueprint2024";
 
 // mongoose 7 warning
 mongoose.set("strictQuery", false);
@@ -60,6 +60,9 @@ app.use(validator.checkRoutes);
 // allow us to process POST requests
 app.use(express.json());
 
+// enable CORS
+app.use(cors())
+
 // set up a session, which will persist login data across requests
 app.use(
   session({
@@ -69,9 +72,6 @@ app.use(
     saveUninitialized: false,
   })
 );
-
-// this checks if the user is logged in, and populates "req.user"
-app.use(auth.populateCurrentUser);
 
 // connect user-defined routes
 app.use("/api", api);
