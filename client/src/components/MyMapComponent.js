@@ -34,7 +34,7 @@ const MyMapComponent = ({origin, destination, circles, locations, mapCenter}) =>
 
   return (
     <LoadScript
-      googleMapsApiKey={"YOUR API KEY"}
+      googleMapsApiKey="YOUR_API_KEY"
       id="script-loader"
     >
       <GoogleMap
