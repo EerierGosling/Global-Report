@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import jwt_decode from "jwt-decode";
 
@@ -27,18 +27,16 @@ const App = () => {
 
   return (
     <>
+      <div className="app"></div>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <App2/>
-          }
-        />
+        {/* Nested route moved outside App3 */}
+        <Route path="/form" element={<App2 />} />
+        <Route path="/" element={<App3 />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <App3/>
-
+      {/* Additional content or components can be added here */}
     </>
+    
   );
 };
 

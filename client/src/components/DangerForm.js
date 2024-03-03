@@ -28,19 +28,9 @@ function DangerForm({ onAddDanger }) {
 
   return (
     <form onSubmit={handleSubmit} className="danger-form">
+        <h1>Submit Your Danger Zone or Supply Location</h1>
       <div className="form-group">
-        <label htmlFor="locationX" className="label">Location X:</label>
-        <input
-          id="locationX"
-          type="number"
-          value={locationX}
-          onChange={(e) => setLocationX(e.target.value)}
-          required
-          className="input"
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="locationY" className="label">Location Y:</label>
+        <label htmlFor="locationY" className="label">Latitude:</label>
         <input
           id="locationY"
           type="number"
@@ -51,7 +41,18 @@ function DangerForm({ onAddDanger }) {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="radius" className="label">Radius:</label>
+        <label htmlFor="locationX" className="label">Longitude:</label>
+        <input
+          id="locationX"
+          type="number"
+          value={locationX}
+          onChange={(e) => setLocationX(e.target.value)}
+          required
+          className="input"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="radius" className="label">Radius (0 if a supply location):</label>
         <input
           id="radius"
           type="number"
@@ -61,7 +62,7 @@ function DangerForm({ onAddDanger }) {
           className="input"
         />
       </div>
-      <button type="submit" className="button">Add Danger</button>
+      <button type="submit" className="button">Submit</button>
     </form>
   );
 }

@@ -41,15 +41,31 @@
 
 .app-container {
 display: flex;
+height: 100vh;
 }
 
 .content-container {
 flex: 1;
 padding: 20px; /* Adjust the padding as needed */
 background-color: #f0f0f0; /* Optional background color for the left side */
+height: 100%; /* Adjust the height as needed */
 }
 
 .map-container {
 flex: 1;
-height: 100%; /* Adjust the height as needed */
+height: 100vh; /* Adjust the height as needed */
+
 }
+
+button {
+    width: 100px; /* Make button take up full width */
+    padding: 10px; /* Add padding */
+    background-color: #007bff; /* Set background color */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Add border radius */
+    cursor: pointer; /* Add pointer cursor */
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }

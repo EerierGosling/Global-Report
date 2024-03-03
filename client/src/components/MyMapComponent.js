@@ -4,7 +4,7 @@ import { GoogleMap, LoadScript, DirectionsService, DirectionsRenderer, Polygon, 
 const MyMapComponent = ({origin, destination, circles, locations, mapCenter}) => {
   const mapContainerStyle = {
     width: '100%',
-    height: '400px',
+    height: '100vh',
   };
 
   const defaultCenter = {
@@ -34,7 +34,7 @@ const MyMapComponent = ({origin, destination, circles, locations, mapCenter}) =>
 
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyC3MGNhHw3w3ANcefztqbc0mgVRXJUe9Ak"
+      googleMapsApiKey="AIzaSyBTlxvB62XGYgvgfUeIbpfh2rIZJURlj1g"
       id="script-loader"
     >
       <GoogleMap
@@ -55,16 +55,14 @@ const MyMapComponent = ({origin, destination, circles, locations, mapCenter}) =>
               />
             ))}
 
+            {console.log(destination)}
+
             {directions === null && (
               <DirectionsService
                 options={{
                   origin: origin,
                   destination: destination,
                   travelMode: "WALKING",
-                    waypoints: circles.map(circle => ({
-                    location: new window.google.maps.LatLng(circle.center.lat, circle.center.lng),
-                    stopover: false,
-                    })),
                 }}
                 callback={directionsCallback}
                 map={googleMap}
