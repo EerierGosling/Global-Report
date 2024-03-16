@@ -3,6 +3,8 @@ A website civilians can use to be aware of danger in their area. Created for MIT
 
 **Track:** General
 
+![Our trifold and project during judging.](trifold-project.jpg)
+
 ## Inspiration
 The conflicts across the globe; recent, a long time ago, and in the future. We were inspired by times of unrest in the world. Whether it be natural disasters, a zombie apocalypse, or even a war, people need to be able to find resources in the most treacherous times. We wanted to make something that could help.
 
