@@ -1,5 +1,5 @@
 # Global Report
-A website civilians can use to be aware of danger in their area. Created for MIT Blueprint 2024.
+A website civilians can use to be aware of danger in their area. Created for MIT Blueprint 2024. 
 
 **Track:** General
 
